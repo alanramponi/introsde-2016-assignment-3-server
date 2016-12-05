@@ -7,7 +7,6 @@ import java.net.URISyntaxException;
 import javax.xml.ws.Endpoint;
 
 import introsde.assignment.soap.ws.PeopleImplementation;
-import introsde.document.ws.PeopleImpl;
 
 
 /**
