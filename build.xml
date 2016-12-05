@@ -104,8 +104,8 @@
             </copy>
         </target>
         <target name="start">
-            <echo message="app start introsde.document.endpoint.PeoplePublisher in ${build.dir}" />
-            <java classname="introsde.document.endpoint.PeoplePublisher" classpath="${build.dir}" fork="true">
+            <echo message="app start introsde.assignment.soap.endpoint.PeoplePublisher in ${build.dir}" />
+            <java classname="introsde.assignment.soap.endpoint.PeoplePublisher" classpath="${build.dir}" fork="true">
                 <arg value="$JAVA_OPTS  -cp" />
                 <classpath>
                     <path location="build" />
@@ -116,6 +116,7 @@
                 </classpath>
             </java>
         </target>
+    	<!--
         <target name="execute.client">
             <echo message="ant execute.client introsde.document.client.PeopleClient in ${build.dir}" />
             <java classname="introsde.document.client.PeopleClient" classpath="${build.dir}" fork="true">
@@ -129,6 +130,7 @@
                 </classpath>
             </java>
         </target>
+        -->
         <!-- Run the JUnit Tests -->
         <!-- Output is XML, could also be plain-->
         <target name="junit">
