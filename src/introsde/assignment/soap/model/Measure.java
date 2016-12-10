@@ -14,7 +14,6 @@ import introsde.assignment.soap.dao.EHealthDao;
  * The persistent JAVA class for the "measure" database table.
  * 
  * @author alan
- *
  */
 
 @Entity								// this class is an entity to persist in DB
@@ -32,9 +31,6 @@ public class Measure implements Serializable {
 	 ********************************************************************************/
 	
 	@Id													// this attribute identifies the entity
-//	@GeneratedValue(generator="sqlite_measure")			// this value is generated automatically
-//	@TableGenerator(name="sqlite_measure", table="sqlite_sequence", pkColumnName="name",
-//		valueColumnName="seq", pkColumnValue="measure")
 	@TableGenerator(name="MEASURE_ID_GENERATOR", table="MEASURE_SEQUENCES", pkColumnName="MEASURE_SEQ_NAME",
     valueColumnName="MEASURE_SEQ_NUMBER", pkColumnValue = "MEASURE_SEQUENCE", allocationSize=1)
 	@GeneratedValue(strategy=GenerationType.TABLE, generator="MEASURE_ID_GENERATOR")
@@ -105,10 +101,6 @@ public class Measure implements Serializable {
 		
 		return list;
 	}
-	
-	
-	
-	
 	
 	/**
 	 * A method that saves a particular person.

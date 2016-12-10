@@ -21,7 +21,6 @@ import introsde.assignment.soap.model.MeasurementHistory;
  * The persistent JAVA class for the "person" database table.
  * 
  * @author alan
- *
  */
 
 @Entity					// this class is an entity to persist in DB
@@ -42,10 +41,6 @@ public class Person implements Serializable {
 	 ********************************************************************************/
 	
 	@Id											// this attribute identifies the entity
-//	@GeneratedValue(generator="sqlite_person")	// this value is generated automatically
-//	@TableGenerator(name="sqlite_person", table="sqlite_sequence", pkColumnName="name",
-//		valueColumnName="seq", pkColumnValue="person")
-	
 	@TableGenerator(name="PERSON_ID_GENERATOR", table="PERSON_SEQUENCES", pkColumnName="PERSON_SEQ_NAME",
     valueColumnName="PERSON_SEQ_NUMBER", pkColumnValue = "PERSON_SEQUENCE", allocationSize=1)
 	@GeneratedValue(strategy=GenerationType.TABLE, generator="PERSON_ID_GENERATOR")

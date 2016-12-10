@@ -16,9 +16,9 @@ import introsde.assignment.soap.model.MeasurementHistory;
 import introsde.assignment.soap.model.Person;
 
 /**
- * Service endpoint interface
+ * The service endpoint interface.
+ * 
  * @author alan
- *
  */
 
 @WebService
@@ -51,7 +51,7 @@ public interface People {
 	 * @return the person updated
 	 */
 	@WebMethod(operationName="updatePerson")
-	@WebResult(name="person")
+	@WebResult(name="updatedPerson")
 	public Person updatePerson(
 			@WebParam(name="person") Person p
 	);
@@ -63,7 +63,7 @@ public interface People {
 	 * @return the person created
 	 */
 	@WebMethod(operationName="createPerson")
-	@WebResult(name="person")
+	@WebResult(name="createdPerson")
 	public Person createPerson(
 			@WebParam(name="person") Person p
 	);
@@ -124,7 +124,7 @@ public interface People {
 	 * @return the saved measurement
 	 */
 	@WebMethod(operationName="savePersonMeasure")
-	@WebResult(name="measure_type")
+	@WebResult(name="measurement")
 	public Measurement savePersonMeasure(
 			@WebParam(name="id") Long id,
 			@WebParam(name="measure_type") Measurement m
@@ -143,4 +143,10 @@ public interface People {
 			@WebParam(name="id") Long id,
 			@WebParam(name="measure_type") MeasurementHistory m
 	);
+	
+	/***
+	 * An accessory method used to reset the database before the client start executing.
+	 */
+	@WebMethod
+	void initializeDatabase();
 }

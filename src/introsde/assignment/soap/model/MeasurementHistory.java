@@ -17,7 +17,6 @@ import introsde.assignment.soap.model.Person;
  * The persistent JAVA class for the "measurement_history" database table.
  * 
  * @author alan
- *
  */
 
 @Entity									// this class is an entity to persist in DB
@@ -36,9 +35,6 @@ public class MeasurementHistory implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Id															// this attribute identifies the entity
-//	@GeneratedValue(generator="sqlite_measurementHistory")		// this value is generated automatically
-//	@TableGenerator(name="sqlite_measurementHistory", table="sqlite_sequence", pkColumnName="name",
-//		valueColumnName="seq", pkColumnValue="measurement_history")
 	@TableGenerator(name="MEASUREMENTH_ID_GENERATOR", table="MEASUREMENTH_SEQUENCES", pkColumnName="MEASUREMENTH_SEQ_NAME",
     valueColumnName="MEASUREMENTH_SEQ_NUMBER", pkColumnValue = "MEASUREMENTH_SEQUENCE", allocationSize=1)
 	@GeneratedValue(strategy=GenerationType.TABLE, generator="MEASUREMENTH_ID_GENERATOR")
@@ -94,7 +90,8 @@ public class MeasurementHistory implements Serializable {
 	 * A method that returns the measure name.
 	 * @return measureType: the measure name
 	 */
-	@XmlTransient						// it will not be saved in database
+	// @XmlTransient						// it will not be saved in database
+	@XmlElement(name="measure")
 	public String getMeasureName() {
 		return this.measureName;
 	}

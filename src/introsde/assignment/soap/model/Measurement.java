@@ -16,7 +16,6 @@ import introsde.assignment.soap.model.Person;
  * The persistent JAVA class for the "measurement" database table.
  * 
  * @author alan
- *
  */
 
 @Entity							// this class is an entity to persist in DB
@@ -35,13 +34,9 @@ public class Measurement implements Serializable {
 	 ********************************************************************************/
 	
 	@Id													// this attribute identifies the entity
-//	@GeneratedValue(generator="sqlite_measurement")		// this value is generated automatically
-//	@TableGenerator(name="sqlite_measurement", table="sqlite_sequence", pkColumnName="name",
-//		valueColumnName="seq", pkColumnValue="measurement")
 	@TableGenerator(name="MEASUREMENT_ID_GENERATOR", table="MEASUREMENT_SEQUENCES", pkColumnName="MEASUREMENT_SEQ_NAME",
     valueColumnName="MEASUREMENT_SEQ_NUMBER", pkColumnValue = "MEASUREMENT_SEQUENCE", allocationSize=1)
 	@GeneratedValue(strategy=GenerationType.TABLE, generator="MEASUREMENT_ID_GENERATOR")
-	
 	
 	@Column(name="id")									// map the following attribute to a column
 	private int id;
@@ -78,7 +73,8 @@ public class Measurement implements Serializable {
 	 * A method that returns the health profile identifier.
 	 * @return id: the health profile identifier
 	 */
-	@XmlTransient						// it will not be saved in database
+	// @XmlTransient					// it will not be saved in database
+	@XmlElement(name="mid")				// customize the XML element name
 	public int getId() {
 		return this.id;
 	}
@@ -146,7 +142,7 @@ public class Measurement implements Serializable {
 	 * A method that returns the time.
 	 * @return time: the time
 	 */
-	@XmlElement(name="last_update")		// customize the XML element name
+	@XmlElement(name="created")		// customize the XML element name
 	public String getTime() {
 		return this.time;
 	}
