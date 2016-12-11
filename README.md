@@ -1,16 +1,18 @@
-### Introduction to Service Design and Engineering: 2nd assignment (Alan Ramponi, 179850)
+### Introduction to Service Design and Engineering: 3rd assignment (Alan Ramponi, 179850)
 
 TODO!
 
-The project consists in developing a RESTful web service. An ant `build.xml` file allows to automate the compilation, cleaning and execution; in addition to that, dependencies are managed with ivy. The whole code is well documented and commented.
+The project consists in developing a SOAP web service. An ant `build.xml` file allows to automate the compilation, cleaning and execution; in addition to that, dependencies are managed with ivy. The whole code is well documented and commented.
 
-The project has been developed individually and the server has been deployed on heroku at the following base url:
-https://murmuring-citadel-91696.herokuapp.com/rest/
+The project has been developed individually and the server WSDL is on heroku at the following url:
+https://introsde-assignment3-ar.herokuapp.com/ws/people?wsdl
 
-**Extra tasks**: the health profile is built dinamically (according to measure types).
+**Extra tasks**: as in the assignment-2, the health profile is built dinamically (according to measure types).
+
+(...)
 
 ### Project architecture
-The project is structured in several packages in order to organize all the classes in a reasonable way. Inside the main common package (`sde.ehealth`) it is possible to find:
+The project is structured in several packages in order to organize all the classes in a reasonable way. Inside the main common package (`introsde.assignment.soap`) it is possible to find:
 * `server`: a package that contains all the things necessary to expose the service through a RESTful API:
   * **Application.java**: the main class useful to start the server;
   * **Configuration.java**: the configuration class to expose the service.
@@ -26,15 +28,6 @@ The project is structured in several packages in order to organize all the class
     * **PersonCollectionResource.java**: the class that exposes REST operations that handle collections of Person objects;
     * **MeasurementResource.java**: the class that exposes REST operations that handle Measurement objects;
     * **MeasurementHistoryResporce.java**: the class that exposes REST operations that handle MeasurementHistory objects.
-* `client`: a package that contains what we need in order to compute the requests:
-  * **Application.java**: the main class of the client that sends all the requests of the assignment;
-  * `responses`: a package that contains the classes to handle responses:
-    * **Person.java**: the class relative to Person;
-    * **Measure.java**: the class relative to Measure;
-    * **Measurement.java**: the class relative to Measurement;
-    * **MeasurementHistory.java**: the class relative to MeasurementHistory;
-  * `parser`: a package that contains useful methods to parse XML and JSON strings:
-    * **Parser.java**: the class that provides those methods.
 
 ### Tasks
 The `build.xml` file contains some targets in order to execute various operations. In particular, using ant (`ant execute.client`) we accomplish all the requests of the assignment (that can be found here: https://sites.google.com/a/unitn.it/introsde_2016-17/lab-sessions/assignments/assignment-2).
