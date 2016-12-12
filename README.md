@@ -13,16 +13,16 @@ https://introsde-assignment3-ar.herokuapp.com/ws/people?wsdl
 The project is structured in several packages in order to organize all the classes in a reasonable way. Inside the main common package (`introsde.assignment.soap`) it is possible to find:
 * `dao`: a package that contains the DAO:
    * **EHealthDao.java**: a class (singleton JAVA instance) that connects the model to the DB, specifically used to create an Entity Manager whenever we need to execute an operation in the SQLite database.
- * `endpoint`: a package that contains the endpoint:
+* `endpoint`: a package that contains the endpoint:
    * **PeoplePublisher.java**: the web service endpoint publisher.
- * `model`: a package that contains the model objects of the application (annotated):
-     * **Person.java**: the class of the "person" table;
-     * **Measure.java**: the class of the "measure" table;
-     * **Measurement.java**: the class of the "measurement" table;
-     * **MeasurementHistory.java**: the class of the "measurement_history" table.
- * `ws`: a package that contains the SOAP layer for the clients:
-     * **People.java**: the service endpoint interface;
-     * **PeopleImplementation.java**: the service endpoint implementation.
+* `model`: a package that contains the model objects of the application (annotated):
+   * **Person.java**: the class of the "person" table;
+   * **Measure.java**: the class of the "measure" table;
+   * **Measurement.java**: the class of the "measurement" table;
+   * **MeasurementHistory.java**: the class of the "measurement_history" table.
+* `ws`: a package that contains the SOAP layer for the clients:
+   * **People.java**: the service endpoint interface;
+   * **PeopleImplementation.java**: the service endpoint implementation.
 
 ### Tasks
 The `build.xml` file contains some targets in order to execute various operations. In particular, using ant (`ant execute.server`) it is possible to register the SOAP endpoint (that is executed by Heroku thanks to the Procfile task configuration file). The server accomplishes all the requests of the assignment (that can be found here: https://sites.google.com/a/unitn.it/introsde_2016-17/lab-sessions/assignments/assignment-3).
