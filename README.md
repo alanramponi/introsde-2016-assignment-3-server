@@ -1,11 +1,10 @@
 ### Introduction to Service Design and Engineering: 3rd assignment (Alan Ramponi, 179850)
 
-This is the **server repository**. For the client repository follow this link:
-https://github.com/alanramponi/introsde-2016-assignment-3-client
+This is the **server repository** (client repository: https://github.com/alanramponi/introsde-2016-assignment-3-client).
 
 The project consists in developing a SOAP web service. An ant `build.xml` file allows to automate the compilation, cleaning and execution; in addition to that, dependencies are managed with ivy. The whole code is well documented and commented.
 
-The project has been developed individually and the server WSDL is on heroku at the following url:
+The project has been developed individually and the server WSDL can be found on heroku at the following url:
 https://introsde-assignment3-ar.herokuapp.com/ws/people?wsdl
 
 **Extra tasks**: as in the assignment-2, the health profile is built dinamically (according to measure types).
@@ -34,4 +33,4 @@ As in the assignment-2, an additional task was performed, i.e. the extra request
 Since the server is already (correctly) deployed on Heroku, it is only needed to follow the steps below:
 * **Clone** the repo: `git clone https://github.com/alanramponi/introsde-2016-assignment-3.git`;
 * **Navigate** into the project folder: `cd introsde-2016-assignment-3`;
-* **Execute** the server using ant: `ant execute.server`.
+* **Run** the server using ant: `ant execute.server`.
