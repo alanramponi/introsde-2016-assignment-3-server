@@ -1,6 +1,7 @@
 ### Introduction to Service Design and Engineering: 3rd assignment (Alan Ramponi, 179850)
 
-This is the **server repository**. For the client repository follow this link: https://github.com/alanramponi/introsde-2016-assignment-3-client
+This is the **server repository**. For the client repository follow this link:
+https://github.com/alanramponi/introsde-2016-assignment-3-client
 
 The project consists in developing a SOAP web service. An ant `build.xml` file allows to automate the compilation, cleaning and execution; in addition to that, dependencies are managed with ivy. The whole code is well documented and commented.
 
